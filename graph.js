@@ -144,7 +144,8 @@ function createTimeline() {
     ctx.drawImage(imgObject, canvasWidth - 50, 5, 50, 18);
 
 
-    // Clear canvas
+    // Clear canvas!
+    //canvas.style.visibility = "visible";
     var totals = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var start, stop, len;
     for (var i = 0; i < numOfButtons; i++) {
@@ -172,7 +173,7 @@ function saveTimeline() {
     }
 
     var link = document.createElement("a");
-    link.setAttribute('download', document.getElementById("filename").value);
+    link.setAttribute('download', moduleName[module] + "_" + document.getElementById("filename").value + "_Timeline.png");
     link.href = canvas.toDataURL("image/png");
     document.body.appendChild(link);
     link.click();
