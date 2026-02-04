@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-TW" lang="zh-TW">
+
+<head>
+    <link href="../img/LOGO.png" rel="icon" type="image/gif"/>
+    <title>MTC-DOT(Modular timeline coding digital observation tool)</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Geany 1.32" />
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Jquery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <button class="infoButton" , id="infoButton"><i class="fa fa-info-circle"></i></button>
+    <!-- The Modal -->
+    <div id="myModal" class="mymodal">
+        <!-- Modal content -->
+        <div class="mymodal-content">
+            <div class="mymodal-header">
+                <span class="close">&times;</span>
+                <h2>模組時間線標記數位觀課工具（Modular timeline coding digital observation tool）</h2>
+            </div>
+            <div class="mymodal-body">
+                <ul>
+                    <li>版本：MTC1.0</li>
+                    <li>簡介：</li>
+                    <p>本程式基於赫爾辛基大學的Miikka
+                        Turkkila研究員所開發的開源程式轉製而成1.0版，程式網址： <a
+                            href="https://bit.ly/tdodot1">https://bit.ly/tdodot1</a>，再依教師社群測試和運用結果，修改成本1.1版。
+                    </p>
+                    <ul>
+                        <li>時間線標記：依據於課堂中所看到或聽到的事實依觀察焦點進行分類，並依據課堂時間進行輸入標記，產生課堂事實紀錄。</li>
+                        <li>通用：標記按鈕可依教師需求自行分類與定義。可參考小組學習觀察表、個別學生課堂行為時間線紀錄表、個別學生課程行為發生頻率紀錄表等觀課工具之分類使用。（請參閱此<a
+                                href="https://sites.google.com/view/ntnutdo/%E5%90%84%E5%BC%8F%E8%A7%80%E5%AF%9F%E7%B4%80%E9%8C%84%E8%A1%A8"
+                                target="_blank">連結</a>）</li>
+                    </ul><br>
+                    <li>使用說明：（可參閱此<a
+                            href="https://docs.google.com/presentation/d/1x3zIluqaKUHVUFNjyfhTfjJ1tPaGPdXd/edit?usp=sharing&ouid=106870025239283676885&rtpof=true&sd=true"
+                            target="_blank">連結</a>）</li><br>
+                    <ul>
+                        <li>START/PAUSE按鈕可啟動或停止計時器。</li>
+                        <li>編號按鈕可切換狀態，您可以按下啟用或再次按下以停用。這樣做可將當前時間保存為該事件的開始或停止時間。</li>
+                        <li>＋和－按鈕分別添加和刪除按鈕，請注意，刪除按鈕也會刪除該按鈕的已保存數據。按鈕數量上下限為2至12個。</li>
+                        <li>RENAME按鈕可讓您為每個按鈕命名。名稱存儲在本地（裝置），因此即使關閉視窗，它們通常會保持不變。請您不要使用無痕視窗。</li>
+                        <li>本程式可從紀錄的數據中繪製簡單的HTML5時間線橫條圖，您可以透過右鍵選單另存。</li>
+                        <li>本程式亦下載紀錄的數據csv文件。請注意，文件的第一行始終是“start0，stop0，start1...”，並且不會受到按鈕重新命名的影響。</li>
+                        <li>清除按鈕重置計時器，清除時間線並刪除所有數據。但是，它不會影響編號按鈕的名稱。</li>
+                    </ul><br>
+                    <li>授權說明：</li>
+                    <p>
+                        「模組時間線標記數位觀課工具」由國立臺灣師範大學製作，以創用CC姓名標示-非商業性-相同方式分享4.0國際授權條款釋出。（<a
+                            href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant"
+                            target="_blank">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant</a>）
+                    </p>
+                    <li>文獻引用：</li>
+                    <p>
+                        國立臺灣師範大學(2024)。模組時間線標記數位觀課工具(1.0版)。113年中小學教師專業發展人才培訓輔導計畫。<br>
+                        National Taiwan Normal University(2024). Universal timeline coding digital observation
+                        tool(1.1version). The training and counseling plan for primary and secondary school
+                        teachersprofessional development at 2024.
+
+                    </p>
+                    <li>本MTC1.0數位工具，在測試與試用後，將開放開源程式。</li>
+                    <img id="logo" width="200" src="../img/LOGO.png" alt="logo" />
+                </ul>
+            </div>
+            <div class="mymodal-footer">
+                <h4><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant"><img
+                            alt="Creative Commons License" style="border-width:0"
+                            src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                    計畫主持人：張民杰&emsp;程式協作：楊智翔
+                </h4>This work is licensed under a <a rel="license"
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant">Creative Commons
+                    Attribution-NonCommercial-ShareAlike
+                    4.0 International License</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="d-flex justify-content-center pt-4">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-primary btn-lg px-4 fs-2" id="flowStrPas"
+                    onclick="flowStartPause()">Start</button>
+            </div>
+            <div class="p-3">
+                <span class="fs-2" id="MasterTime">00:00</span>
+            </div>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-danger btn-lg px-4 fs-2 disabled" id="flowStpRst"
+                    onclick="flowStopReset()">Reset</button>
+            </div>
+        </div>
+
+        <hr>
+        <div class="d-flex row justify-content-center" id="setting">
+            <div class="d-flex justify-content-center col-6">
+                <label class="input-group-text" for="OBperiod">Select module</label>
+                <select class="form-select" id="module" onchange="btnGen()">
+                    <option value=0 selected>Flanders interaction analysis system (FIAS)</option>
+                    <option value=1>Teacher-pupil interaction (TPI)</option>
+                    <option value=2>Content and language integrated
+                        learning
+                        (CLIL)</option>
+                    <option value=3>Digital learning (DL)</option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center my-3">
+            <div id="divButtons" class="d-flex flex-wrap gap-2 justify-content-center col-12 col-md-10 col-xxl-8">
+            </div>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center align-items-center py-2 flex-wrap btn-group" id="divOperate">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-secondary fs-4 m-1 disabled" onclick="createTimeline()">Show result</button>
+            </div>
+            <div class="form-floating m-1" id="input-group">
+                <input class="form-control" type="text" id="filename" placeholder="Filename">
+                <label for="filename">Filename</label>
+            </div>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-secondary m-1 fs-4 dropdown-toggle disabled" id="download" type="button"
+                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class=" fa
+                    fa-download"></i>
+                    Download file</button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="download">
+                    <li><button class="dropdown-item" onclick="getRecordData()">Records(.csv)</button></li>
+                    <li><button class="dropdown-item" onclick="saveTimeline()">Timeline(.png)</button></li>
+                    <li><button class="dropdown-item" onclick="getVarData()">VariableAnalysis(.csv)</button></li>
+                    <li><button class="dropdown-item" onclick="getFreqData()">FrequencyAnalysis(.csv)</button></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="divTimeline" class="d-flex justify-content-center mb-2">
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
+        </script>
+
+    <script src="graph.js"></script>
+    <script src="mtcjsfile.js"></script>
+
+    </script>
+    <script>
+        btnGen();
+        modalControl();
+    </script>
+
+</body>
+</body>
+
+</html>
